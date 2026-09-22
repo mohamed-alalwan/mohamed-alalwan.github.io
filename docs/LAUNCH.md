@@ -1,6 +1,6 @@
 # Portfolio launch and upkeep
 
-Target: `mohamedalalwan.com` with `www.mohamedalalwan.com` redirecting to the apex domain, and `hello@mohamedalalwan.com` forwarding inbound messages to Mohamed's personal Gmail. The domain was registered on 22 September 2026; the live site still needs publication and verification.
+Target: `mohamedalalwan.com` with `www.mohamedalalwan.com` redirecting to the apex domain, and `hello@mohamedalalwan.com` forwarding inbound messages to Mohamed's personal Gmail. The domain was registered on 22 September 2026.
 
 ## Domain and contact
 
@@ -10,11 +10,10 @@ Target: `mohamedalalwan.com` with `www.mohamedalalwan.com` redirecting to the ap
 
 ## GitHub Pages and DNS
 
-1. Publish a clean snapshot of this repository to Mohamed's personal `mohamed-alalwan.github.io` repository. In repository settings, choose **GitHub Actions** as the Pages source. Verify the default `github.io` URL serves the site first.
-2. Ownership of `mohamedalalwan.com` was verified in Mohamed's personal GitHub Pages profile using a TXT record. Add the custom domain in the repository's Pages settings after the first push.
-3. In Porkbun DNS, add GitHub Pages' four apex A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`. Add a `www` CNAME to `mohamed-alalwan.github.io`. Avoid wildcard DNS. Preserve email forwarding MX/TXT records while editing website DNS.
-4. `site` in `astro.config.mjs` now uses `https://mohamedalalwan.com`. Verify the canonical and social URL metadata on the live site. Once GitHub provisions the certificate, enable **Enforce HTTPS**.
-5. Verify both apex and `www` in a browser, the CV download, a case-study page, GitHub/LinkedIn links and the contact mail link. DNS and HTTPS activation can take time; do not call the launch complete until these checks pass.
+1. The clean snapshot was pushed to Mohamed's personal `mohamed-alalwan.github.io` repository on 22 September. Pages uses **GitHub Actions**, and the custom Astro workflow succeeded. The Pages repository settings specify `mohamedalalwan.com`, which was verified in Mohamed's personal GitHub Pages profile using a Porkbun TXT record.
+2. Porkbun has an apex `ALIAS` to `mohamed-alalwan.github.io` (flattened to GitHub Pages' four IPv4 addresses) and a `www` CNAME to the same host. The registrar's default wildcard parking record was replaced, while MX/SPF and ownership TXT records were preserved. Cached resolvers may briefly return old parking data.
+3. `site` in `astro.config.mjs` uses `https://mohamedalalwan.com`. The site, PDF and case-study page returned HTTP 200 after deployment. Once GitHub provisions the certificate, enable **Enforce HTTPS** and verify the canonical and social URL metadata on the HTTPS site.
+4. Verify both apex and `www` in a browser, the CV download, case-study navigation, GitHub/LinkedIn links and the contact mail link. DNS and HTTPS activation can take time; do not call the launch complete until these checks pass.
 
 ## Routine maintenance
 

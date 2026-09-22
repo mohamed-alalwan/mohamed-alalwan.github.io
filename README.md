@@ -30,6 +30,6 @@ Give each new project a unique `id`. Add an optional `caseStudy` path only when 
 
 Open a branch, make the change, then open a pull request against `main`. The GitHub Actions workflow runs Astro's checks and build on the pull request. Merging to `main` builds and deploys the site with GitHub Pages. The repository's Pages source must be **GitHub Actions**. The custom-domain and email setup is tracked in [LAUNCH.md](docs/LAUNCH.md).
 
-The `mohamed-alalwan.github.io` repository belongs to Mohamed's **personal** GitHub account. Do not push through a work account or shared Git credential. The current repo is a local draft until the personal-account deployment is verified.
+The `mohamed-alalwan.github.io` repository belongs to Mohamed's **personal** GitHub account. This checkout has a repository-only SSH deploy key for pushes, configured in its local Git settings; `git push origin main` uses that key. The private key is stored outside the repository at `~/.ssh/mohamed_portfolio_deploy_ed25519`. Never commit or copy it into the site, and do not push through a work account or shared Git credential. On a new computer, create a new repository-only key and add its public half under this repository's Settings → Deploy keys before pushing.
 
 The contact address is `hello@mohamedalalwan.com`. Porkbun forwards it to Mohamed's personal Gmail; an independent inbound test reached that Inbox on 22 September 2026. See [LAUNCH.md](docs/LAUNCH.md) for the remaining site-publication checks.
