@@ -1,12 +1,12 @@
 # Portfolio launch and upkeep
 
-Target: `mohamedalalwan.com` with `www.mohamedalalwan.com` redirecting to the apex domain, and `hello@mohamedalalwan.com` forwarding inbound messages to Mohamed's personal Gmail. The domain was registered on 22 September 2026; the live site and inbound delivery still need verification.
+Target: `mohamedalalwan.com` with `www.mohamedalalwan.com` redirecting to the apex domain, and `hello@mohamedalalwan.com` forwarding inbound messages to Mohamed's personal Gmail. The domain was registered on 22 September 2026; the live site still needs publication and verification.
 
 ## Domain and contact
 
 1. The domain is registered in Mohamed's personal Porkbun account through 22 September 2027. Review WHOIS privacy and auto-renewal settings. No paid web hosting or email hosting is needed for this static site.
-2. Porkbun shows one free email forward: `hello@` to Mohamed's personal Gmail. Its two forwarding MX records and SPF record were present after creation. Send a test from a *different* email account and confirm its arrival in Gmail. Forwarding receives mail; replies from ordinary Gmail will show the Gmail address. If replies must come from the custom domain, use a separate sending service later.
-3. The local draft already links to `hello@mohamedalalwan.com` and its downloadable CV uses that address. **Do not publish** until the forward works. The source CV stays outside this repo; the portfolio copy was visually checked after editing.
+2. Porkbun shows one free email forward: `hello@` to Mohamed's personal Gmail. Its two forwarding MX records and SPF record were present after creation. An independent external test reached the personal Gmail Inbox on 22 September 2026. Forwarding receives mail; replies from ordinary Gmail will show the Gmail address. If replies must come from the custom domain, use a separate sending service later.
+3. The local draft already links to `hello@mohamedalalwan.com` and its downloadable CV uses that address. The source CV stays outside this repo; the portfolio copy was visually checked after editing.
 
 ## GitHub Pages and DNS
 
