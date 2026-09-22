@@ -1,0 +1,40 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import IconSprite from '../components/IconSprite.astro';
+import '@fontsource-variable/dm-sans';
+import '@fontsource-variable/manrope';
+import '../styles/global.css';
+import { site } from '../data/site';
+
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+const fullTitle = title === site.name ? `${site.name} — AI full-stack engineer in Bahrain` : `${title} — ${site.name}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en" class="theme-light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>try { if (localStorage.getItem('portfolio-theme') === 'dark') document.documentElement.classList.remove('theme-light'); } catch {}</script>
+    <meta name="theme-color" content="#151515" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/og.png', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <IconSprite />
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main"><slot /></main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { entry: CollectionEntry<'work'>; index?: number; }
+const { entry, index = 1 } = Astro.props;
+---
+<a class={`work-card tone-${entry.data.color}`} href={`/work/${entry.id}/`}>
+  <div class="work-card-top">
+    <span class="work-index">0{index}</span>
+    <span class="work-kicker">{entry.data.kicker}</span>
+    <span class="work-arrow" aria-hidden="true">↗</span>
+  </div>
+  <div class="work-visual" aria-hidden="true">
+    <strong>{entry.data.organization}</strong>
+  </div>
+  <div class="work-card-bottom">
+    <div class="work-card-meta">{entry.data.organization} <span>·</span> {entry.data.period}</div>
+    <h3>{entry.data.title}</h3>
+    <p>{entry.data.summary}</p>
+    <span class="work-card-cta">Read case study <span aria-hidden="true">↗</span></span>
+  </div>
+</a>

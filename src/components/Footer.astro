@@ -1,0 +1,21 @@
+---
+import { site } from '../data/site';
+---
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div>
+      <p class="footer-lead">Let’s talk about a role or project.</p>
+      <div class="footer-actions">
+        <a href={`mailto:${site.email}`}><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-mail" /></svg><span>{site.email}</span></a>
+        <a href={site.linkedin} target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-linkedin" /></svg><span>Connect on LinkedIn</span><svg aria-hidden="true" focusable="false" class="icon icon-small"><use href="#icon-arrow" /></svg></a>
+        <a href={site.github} target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-github" /></svg><span>Personal GitHub</span><svg aria-hidden="true" focusable="false" class="icon icon-small"><use href="#icon-arrow" /></svg></a>
+        <a href={site.cv} download="Mohamed_Alalwan_CV.pdf"><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-download" /></svg><span>Download CV</span></a>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>Mohamed Alalwan</span>
+      <span>Bahrain · Arabic / English</span>
+      <span>© {new Date().getFullYear()}</span>
+    </div>
+  </div>
+</footer>

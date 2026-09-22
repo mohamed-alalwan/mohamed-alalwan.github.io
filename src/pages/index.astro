@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+import { projects } from '../data/projects';
+const featured = projects.filter((project) => project.featured);
+---
+<Base title={site.name} description={site.summary}>
+  <section class="hero shell" id="about">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-line"></span> BAHRAIN · AI / SOFTWARE / DELIVERY</p>
+      <h1>AI features for<br /><em>real workflows.</em></h1>
+      <p class="hero-intro">I’m Mohamed Alalwan, an AI full-stack engineer in Bahrain. At <strong>Penny Software</strong>, I build procurement features that extract information from invoices and vendor offers. Before that, I worked on enterprise AI projects at <strong>KPMG Bahrain</strong> and led selected work as a Senior Associate.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#projects"><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-folder" /></svg><span>Explore projects</span><svg aria-hidden="true" focusable="false" class="icon icon-small"><use href="#icon-arrow" /></svg></a>
+        <a class="button button-secondary" href={site.cv} download="Mohamed_Alalwan_CV.pdf"><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-download" /></svg><span>Download CV</span></a>
+      </div>
+      <div class="hero-social"><a href={site.linkedin} target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-linkedin" /></svg><span>LinkedIn</span><svg aria-hidden="true" focusable="false" class="icon icon-small"><use href="#icon-arrow" /></svg></a><a href={site.github} target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-github" /></svg><span>Personal GitHub</span><svg aria-hidden="true" focusable="false" class="icon icon-small"><use href="#icon-arrow" /></svg></a></div>
+      <p class="hero-foot">BAHRAIN BASED <span>·</span> ARABIC / ENGLISH <span>·</span> AI, SOFTWARE &amp; DELIVERY</p>
+    </div>
+    <div class="hero-panel" aria-label="Areas of experience">
+      <div class="panel-top"><span>MOHAMED ALALWAN</span><span>BAHRAIN</span></div>
+      <div class="panel-core"><span class="panel-number">AI</span><strong>Requirements.<br />Code. Delivery<span>.</span></strong><p>I work across the business process, the interface, backend APIs and AI services.</p></div>
+      <div class="panel-bottom"><span>AI ENGINEERING</span><span>FULL-STACK</span><span>BUSINESS ANALYSIS</span></div>
+    </div>
+  </section>
+
+  <section class="ticker" aria-label="Experience highlights"><div class="shell ticker-inner"><span>penny. <small>2026 — NOW</small></span><span>KPMG BAHRAIN <small>2023 — 2026</small></span><span>BAHRAIN DIABETES SOCIETY <small>COMMUNITY</small></span></div></section>
+
+  <section class="section featured-section shell" id="featured">
+    <div class="section-heading"><div><span class="section-label">01 / SELECTED WORK</span><h2>Selected<br /><em>projects.</em></h2></div><p>Recent work at Penny Software and KPMG sits alongside a volunteer app for Bahrain Diabetes Society. The library below includes earlier web, mobile and game projects.</p></div>
+    <div class="featured-grid">
+      {featured.map((project, index) => <article class={`feature-card feature-${index+1}`}>
+        <div class="feature-cover" aria-hidden="true"><span class="cover-index">0{index+1} / FEATURED</span><span class="cover-symbol">{project.monogram}</span><span class="cover-type">{project.type}</span></div>
+        <div class="feature-copy"><div class="card-overline"><span>{project.organization}</span><span>{project.year}</span></div><h3>{project.title}</h3><p>{project.summary}</p><button class="detail-trigger" data-project={project.id} type="button"><span>View project</span><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-arrow" /></svg></button></div>
+      </article>)}
+    </div>
+  </section>
+
+  <section class="section catalog-section" id="projects"><div class="shell">
+    <div class="section-heading catalog-heading"><div><span class="section-label">02 / PROJECT LIBRARY</span><h2>Projects I’ve<br /><em>worked on.</em></h2></div><p>Browse {projects.length} projects, from current product work to earlier web, mobile and game builds. Search by project, technology or organisation.</p></div>
+    <div class="catalog-toolbar"><div class="filter-group" role="group" aria-label="Filter projects"><button type="button" class="filter active" data-filter="All" aria-pressed="true">All <span>{projects.length}</span></button><button type="button" class="filter" data-filter="Professional" aria-pressed="false">Professional</button><button type="button" class="filter" data-filter="Community" aria-pressed="false">Community</button><button type="button" class="filter" data-filter="Earlier work" aria-pressed="false">Earlier work</button></div><label class="search-box"><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Search projects or skills" autocomplete="off" /><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-search" /></svg></label></div>
+    <p class="result-count" id="result-count" aria-live="polite">Showing {projects.length} projects</p>
+    <div class="project-grid" id="project-grid">
+      {projects.map((project, index) => <article class="project-card" data-category={project.category} data-search={`${project.title} ${project.type} ${project.organization} ${project.summary} ${project.stack.join(' ')}`.toLowerCase()}>
+        <div class="project-cover" aria-hidden="true"><span>{String(index+1).padStart(2,'0')}</span><strong>{project.monogram}</strong><small>{project.type}</small></div>
+        <div class="project-content"><div class="project-meta"><span>{project.category}</span><span>{project.year}</span></div><h3>{project.title}</h3><p>{project.summary}</p><button type="button" class="detail-trigger" data-project={project.id}><span>View details</span><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-arrow" /></svg></button></div>
+      </article>)}
+    </div>
+    <p class="empty-state" id="empty-state" hidden>No projects match that search. Try another title or technology.</p>
+  </div></section>
+
+  <section class="section experience-section shell" id="experience"><div class="section-heading"><div><span class="section-label">03 / EXPERIENCE</span><h2>Where I’ve<br /><em>worked.</em></h2></div><p>My roles have taken me through product engineering, AI consulting, client software and government IT.</p></div><div class="experience-list"><div><span>APR 2026 — PRESENT</span><h3>AI Full-Stack Engineer</h3><strong>penny.</strong><p>Building procurement features across Angular, backend APIs and a Python AI service.</p></div><div><span>DEC 2023 — APR 2026</span><h3>AI Engineer · Senior Associate</h3><strong>KPMG Bahrain</strong><p>Delivered AI systems for clients, led selected projects and guided junior colleagues.</p></div><div><span>APR — NOV 2023</span><h3>Software Engineer</h3><strong>Al Amthal Group</strong><p>Developed web, mobile and API features for client products.</p></div><div><span>JUL 2022 — JAN 2023</span><h3>IT Intern</h3><strong>Information &amp; eGovernment Authority</strong><p>Supported applications through development, testing and troubleshooting.</p></div></div></section>
+
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button type="button" class="dialog-close" aria-label="Close project details"><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-close" /></svg></button><div class="dialog-cover" aria-hidden="true"><span id="dialog-type"></span><strong id="dialog-monogram"></strong><span id="dialog-year"></span></div><div class="dialog-copy"><p class="section-label" id="dialog-category"></p><h2 id="dialog-title"></h2><p class="dialog-org" id="dialog-org"></p><p class="dialog-summary" id="dialog-summary"></p><h3>My contribution</h3><p id="dialog-contribution"></p><h3>Tools &amp; focus</h3><div class="tag-list" id="dialog-stack"></div><div class="dialog-links" id="dialog-links"></div></div></div></dialog>
+
+  <script define:vars={{ projects }}>
+    const dialog = document.querySelector('#project-dialog');
+    const lookup = new Map(projects.map((project) => [project.id, project]));
+    let lastTrigger;
+    const setText = (selector, value) => { document.querySelector(selector).textContent = value; };
+    document.querySelectorAll('[data-project]').forEach((button) => button.addEventListener('click', () => {
+      const project = lookup.get(button.dataset.project);
+      if (!project) return;
+      lastTrigger = button;
+      setText('#dialog-type', project.type); setText('#dialog-monogram', project.monogram);
+      setText('#dialog-year', project.year); setText('#dialog-category', project.category);
+      setText('#dialog-title', project.title); setText('#dialog-org', project.organization);
+      setText('#dialog-summary', project.summary); setText('#dialog-contribution', project.contribution);
+      const tags = document.querySelector('#dialog-stack'); tags.replaceChildren();
+      project.stack.forEach((name) => { const tag = document.createElement('span'); tag.textContent = name; tags.append(tag); });
+      const links = document.querySelector('#dialog-links'); links.replaceChildren();
+      if (project.caseStudy) { const a = document.createElement('a'); a.href = project.caseStudy; a.textContent = 'Read case study ↗'; links.append(a); }
+      (project.links || []).forEach(({ label, url }) => { const a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = `${label} ↗`; links.append(a); });
+      dialog.showModal(); document.body.classList.add('dialog-open');
+    }));
+    document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => { document.body.classList.remove('dialog-open'); lastTrigger?.focus(); });
+    const filters = [...document.querySelectorAll('[data-filter]')];
+    const cards = [...document.querySelectorAll('.project-card')];
+    const search = document.querySelector('#project-search');
+    let activeFilter = 'All';
+    const updateProjects = () => {
+      const query = search.value.trim().toLowerCase(); let visible = 0;
+      cards.forEach((card) => { const show = (activeFilter === 'All' || card.dataset.category === activeFilter) && card.dataset.search.includes(query); card.hidden = !show; if (show) visible++; });
+      setText('#result-count', `Showing ${visible} project${visible === 1 ? '' : 's'}`);
+      document.querySelector('#empty-state').hidden = visible !== 0;
+    };
+    filters.forEach((button) => button.addEventListener('click', () => { activeFilter = button.dataset.filter; filters.forEach((item) => { const active = item === button; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); }); updateProjects(); }));
+    search.addEventListener('input', updateProjects);
+  </script>
+</Base>
