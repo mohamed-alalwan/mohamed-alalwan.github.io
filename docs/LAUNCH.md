@@ -2,6 +2,8 @@
 
 Target: `mohamedalalwan.com` with `www.mohamedalalwan.com` redirecting to the apex domain, and `hello@mohamedalalwan.com` forwarding inbound messages to Mohamed's personal Gmail. The domain was registered on 22 September 2026.
 
+Verified later on 22 September: `https://www.mohamedalalwan.com/` presents a valid certificate and returns HTTP 301 to `https://mohamedalalwan.com/`. The earlier certificate-provisioning note is resolved.
+
 ## Domain and contact
 
 1. The domain is registered in Mohamed's personal Porkbun account through 22 September 2027. Review WHOIS privacy and auto-renewal settings. No paid web hosting or email hosting is needed for this static site.
