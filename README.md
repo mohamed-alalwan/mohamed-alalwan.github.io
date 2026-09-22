@@ -32,4 +32,4 @@ Open a branch, make the change, then open a pull request against `main`. The Git
 
 The `mohamed-alalwan.github.io` repository belongs to Mohamed's **personal** GitHub account. Do not push through a work account or shared Git credential. The current repo is a local draft until the personal-account deployment is verified.
 
-The draft contact address is `hello@mohamedalalwan.com`. It must be tested as a working forward before this version is published.
+The contact address is `hello@mohamedalalwan.com`. Porkbun forwards it to Mohamed's personal Gmail; an independent inbound test reached that Inbox on 22 September 2026. See [LAUNCH.md](docs/LAUNCH.md) for the remaining site-publication checks.
