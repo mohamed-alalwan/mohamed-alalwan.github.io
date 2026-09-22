@@ -10,7 +10,7 @@ stats:
   - value: Recognized
     label: Contribution acknowledged by Bahrain Diabetes Society
 featured: true
-order: 4
+order: 5
 color: blue
 disclosure: This is volunteer work. The AI assistant provides general information, not clinical decisions; no patient data is shown.
 ---

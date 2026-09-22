@@ -2,7 +2,7 @@ export type Project = {
   id: string;
   title: string;
   year: string;
-  category: 'Professional' | 'Community' | 'Earlier work';
+  category: 'Professional' | 'Personal project' | 'Community' | 'Earlier work';
   type: string;
   organization: string;
   summary: string;
@@ -37,6 +37,18 @@ export const projects: Project[] = [
     summary: 'Document extraction and payment checks with less manual monitoring.',
     contribution: 'I helped deliver the production payment-validation solution as part of the KPMG team. The solution reached approximately 90% extraction accuracy and reduced manual monitoring workload by approximately 40%.',
     stack: ['Document AI', 'Azure', 'Workflow design', 'Integration'], caseStudy: '/work/payment-validation/', featured: true, monogram: 'K',
+  },
+  {
+    id: 'procurement-ai-assistant', title: 'Procurement AI Assistant', year: '2026',
+    category: 'Personal project', type: 'AI / analytics prototype', organization: 'Independent project',
+    summary: 'A chat interface for asking questions about a public procurement dataset and exploring the results.',
+    contribution: 'I built a FastAPI and MongoDB backend that turns natural-language questions into aggregation queries, checks the results and returns answers with follow-up questions. The React interface presents the data as charts and sortable tables. This was a personal trial, separate from my work at Penny Software.',
+    stack: ['Python', 'FastAPI', 'MongoDB', 'LangChain', 'React', 'TypeScript', 'Recharts'],
+    caseStudy: '/work/procurement-ai-assistant/', monogram: 'PA',
+    links: [
+      { label: 'Backend repository', url: 'https://github.com/mohamed-alalwan/procurement-ai-backend' },
+      { label: 'Frontend repository', url: 'https://github.com/mohamed-alalwan/procurement-ai-frontend' },
+    ],
   },
   {
     id: 'diabetes-awareness', title: 'Diabetes Awareness App', year: '2024–2025',
