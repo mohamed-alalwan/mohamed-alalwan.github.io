@@ -9,7 +9,6 @@ tags: [Python, FastAPI, MongoDB, LangChain, React, TypeScript, Recharts]
 stats:
   - value: Prototype
     label: Personal trial using a public California procurement dataset
-featured: false
 order: 4
 color: teal
 disclosure: This is a personal experiment, not a Penny Software or KPMG product. The public dataset is downloaded separately; the repositories contain no live service or included data file.

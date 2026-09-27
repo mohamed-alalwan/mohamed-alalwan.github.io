@@ -10,7 +10,6 @@ export type Project = {
   stack: string[];
   links?: { label: string; url: string }[];
   caseStudy?: string;
-  featured?: boolean;
   monogram: string;
 };
 
@@ -22,7 +21,7 @@ export const projects: Project[] = [
     category: 'Professional', type: 'AI / full-stack', organization: 'penny.',
     summary: 'Invoice extraction and mismatch review inside a live procurement product.',
     contribution: 'I shipped AI Smart Scan for the Bill module. It extracts values from uploaded invoices and helps users check them against bill data already in the system. I worked across the Angular interface, backend APIs and Python AI service.',
-    stack: ['Angular', 'NestJS', 'Python', 'REST APIs', 'Document AI'], caseStudy: '/work/ai-smart-scan/', featured: true, monogram: 'AI',
+    stack: ['Angular', 'NestJS', 'Python', 'REST APIs', 'Document AI'], caseStudy: '/work/ai-smart-scan/', monogram: 'AI',
   },
   {
     id: 'penny-offer-extraction', title: 'Vendor-offer extraction', year: '2026',
@@ -36,7 +35,7 @@ export const projects: Project[] = [
     category: 'Professional', type: 'AI / business process', organization: 'KPMG Bahrain',
     summary: 'Document extraction and payment checks with less manual monitoring.',
     contribution: 'I helped deliver the production payment-validation solution as part of the KPMG team. The solution reached approximately 90% extraction accuracy and reduced manual monitoring workload by approximately 40%.',
-    stack: ['Document AI', 'Azure', 'Workflow design', 'Integration'], caseStudy: '/work/payment-validation/', featured: true, monogram: 'K',
+    stack: ['Document AI', 'Azure', 'Workflow design', 'Integration'], caseStudy: '/work/payment-validation/', monogram: 'K',
   },
   {
     id: 'procurement-ai-assistant', title: 'Procurement AI Assistant', year: '2026',
@@ -55,7 +54,7 @@ export const projects: Project[] = [
     category: 'Community', type: 'Mobile / AI', organization: 'Bahrain Diabetes Society',
     summary: 'A multilingual app for diabetes education, tracking and information.',
     contribution: 'I contributed to the volunteer app’s development and user experience. It includes educational resources, blood-sugar tracking, emergency guidance and an AI assistant for general information.',
-    stack: ['Ionic Angular', 'Cloudflare Workers', 'Firebase', 'Figma'], caseStudy: '/work/diabetes-awareness/', featured: true, monogram: 'BDS',
+    stack: ['Ionic Angular', 'Cloudflare Workers', 'Firebase', 'Figma'], caseStudy: '/work/diabetes-awareness/', monogram: 'BDS',
     links: [{ label: 'Project post', url: 'https://www.linkedin.com/posts/mohamed-alalwan_digitalhealth-techforgood-volunteerimpact-activity-7344684569264033792-qvgz' }],
   },
   {

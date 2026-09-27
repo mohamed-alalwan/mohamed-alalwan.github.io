@@ -9,7 +9,6 @@ tags: [Angular, NestJS, TypeScript, Python, REST APIs, Document AI]
 stats:
   - value: Shipped
     label: Available in a live procurement SaaS product
-featured: true
 order: 1
 color: teal
 disclosure: No customer data, internal screenshots or employer-owned code are included.

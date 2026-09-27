@@ -26,7 +26,15 @@ const personSchema = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script is:inline>try { if (localStorage.getItem('portfolio-theme-v2') === 'light') document.documentElement.classList.add('theme-light'); } catch {}</script>
+    <script is:inline>
+      (() => {
+        let choice = null;
+        try { choice = localStorage.getItem('portfolio-theme-v2'); } catch {}
+        if (choice === 'light' || (choice !== 'dark' && matchMedia('(prefers-color-scheme: light)').matches)) {
+          document.documentElement.classList.add('theme-light');
+        }
+      })();
+    </script>
     <meta name="theme-color" content="#151515" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />

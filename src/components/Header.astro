@@ -30,11 +30,19 @@ const nav = [
     themeToggle.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} theme`);
     themeToggle.setAttribute('title', `Switch to ${isLight ? 'dark' : 'light'} theme`);
     themeToggle.setAttribute('aria-pressed', String(!isLight));
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', isLight ? '#f8f6f2' : '#151515');
   };
   updateThemeLabel();
   themeToggle?.addEventListener('click', () => {
     document.documentElement.classList.toggle('theme-light');
     try { localStorage.setItem('portfolio-theme-v2', document.documentElement.classList.contains('theme-light') ? 'light' : 'dark'); } catch {}
+    updateThemeLabel();
+  });
+  matchMedia('(prefers-color-scheme: light)').addEventListener('change', (event) => {
+    let choice = null;
+    try { choice = localStorage.getItem('portfolio-theme-v2'); } catch {}
+    if (choice === 'light' || choice === 'dark') return;
+    document.documentElement.classList.toggle('theme-light', event.matches);
     updateThemeLabel();
   });
 </script>

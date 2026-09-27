@@ -9,7 +9,6 @@ tags: [Angular, NestJS, TypeScript, Python, REST APIs, Document Extraction]
 stats:
   - value: Shipped
     label: Added to a live procurement SaaS workflow
-featured: false
 order: 2
 color: blue
 disclosure: Supplier documents, customer data and employer-owned code are not included.

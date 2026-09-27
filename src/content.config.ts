@@ -13,7 +13,6 @@ const work = defineCollection({
     focus: z.string(),
     tags: z.array(z.string()),
     stats: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
-    featured: z.boolean().default(false),
     order: z.number(),
     color: z.enum(['teal', 'orange', 'blue']),
     disclosure: z.string(),

@@ -11,7 +11,6 @@ stats:
     label: Extraction accuracy reported for the solution
   - value: ≈40%
     label: Reduction in manual monitoring workload
-featured: true
 order: 3
 color: orange
 disclosure: Client details, datasets and employer-owned code are omitted. The figures describe the team's solution.

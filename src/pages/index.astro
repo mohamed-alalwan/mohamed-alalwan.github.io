@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
 import { projects } from '../data/projects';
-const featured = projects.filter((project) => project.featured);
 const professionalCount = projects.filter((project) => project.category === 'Professional').length;
 ---
 <Base title={site.name} description={site.summary}>
@@ -23,18 +22,8 @@ const professionalCount = projects.filter((project) => project.category === 'Pro
     </div>
   </section>
 
-  <section class="section featured-section shell" id="featured">
-    <div class="section-heading"><div><span class="section-label">01 / SELECTED WORK</span><h2>Selected<br /><em>projects.</em></h2></div><p>Selected work from Penny Software, KPMG Bahrain and Bahrain Diabetes Society.</p></div>
-    <div class="featured-grid">
-      {featured.map((project, index) => <article class={`feature-card feature-${index+1}`}>
-        <div class="feature-cover" aria-hidden="true"><span class="cover-index">0{index+1} / FEATURED</span><span class="cover-symbol">{project.monogram}</span><span class="cover-type">{project.type}</span></div>
-        <div class="feature-copy"><div class="card-overline"><span>{project.organization}</span><span>{project.year}</span></div><h3>{project.title}</h3><p>{project.summary}</p><a class="detail-trigger" href={project.caseStudy}><span>Read case study</span><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-arrow" /></svg></a></div>
-      </article>)}
-    </div>
-  </section>
-
   <section class="section catalog-section" id="projects"><div class="shell">
-    <div class="section-heading catalog-heading"><div><span class="section-label">02 / PROJECT LIBRARY</span><h2>Project<br /><em>library.</em></h2></div><p>Professional work is shown first. Use the filters to explore personal, community and earlier projects.</p></div>
+    <div class="section-heading catalog-heading"><div><span class="section-label">01 / PROJECTS</span><h2>Projects.</h2></div><p>Professional work is shown first. Use the filters to explore personal, community and earlier projects.</p></div>
     <div class="catalog-toolbar"><div class="filter-group" role="group" aria-label="Filter projects"><button type="button" class="filter active" data-filter="Professional" aria-pressed="true">Professional <span>{professionalCount}</span></button><button type="button" class="filter" data-filter="Personal project" aria-pressed="false">Personal</button><button type="button" class="filter" data-filter="Community" aria-pressed="false">Community</button><button type="button" class="filter" data-filter="Earlier work" aria-pressed="false">Earlier work</button><button type="button" class="filter" data-filter="All" aria-pressed="false">All <span>{projects.length}</span></button></div><label class="search-box"><span class="sr-only">Search projects</span><input id="project-search" type="search" placeholder="Search projects or skills" autocomplete="off" /><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-search" /></svg></label></div>
     <p class="result-count" id="result-count" aria-live="polite">Showing {professionalCount} projects</p>
     <div class="project-grid" id="project-grid">
@@ -46,7 +35,15 @@ const professionalCount = projects.filter((project) => project.category === 'Pro
     <p class="empty-state" id="empty-state" hidden>No projects match that search. Try another title or technology.</p>
   </div></section>
 
-  <section class="section experience-section shell" id="experience"><div class="section-heading"><div><span class="section-label">03 / EXPERIENCE</span><h2>Experience.</h2></div></div><div class="experience-list"><div><span>APR 2026 — PRESENT</span><h3>AI Full-Stack Engineer</h3><strong>penny.</strong><p>Procurement product engineering across the interface, APIs and AI services.</p></div><div><span>DEC 2023 — APR 2026</span><h3>AI Engineer · Senior Associate</h3><strong>KPMG Bahrain</strong><p>Client AI delivery, solution design and project leadership.</p></div><div><span>APR — NOV 2023</span><h3>Software Engineer</h3><strong>Al Amthal Group</strong><p>Web, mobile and API development for client products.</p></div><div><span>JUL 2022 — JAN 2023</span><h3>IT Intern</h3><strong>Information &amp; eGovernment Authority</strong><p>Application development, testing and troubleshooting.</p></div></div></section>
+  <section class="section experience-section shell" id="experience">
+    <div class="section-heading"><div><span class="section-label">02 / EXPERIENCE</span><h2>Experience.</h2></div></div>
+    <div class="experience-list">
+      <div><span>APR 2026 — PRESENT</span><h3>AI Full-Stack Engineer</h3><strong>penny.</strong><p>Procurement product engineering across the interface, APIs and AI services.</p></div>
+      <div><span>DEC 2023 — APR 2026</span><h3>AI Engineer · Senior Associate</h3><strong>KPMG Bahrain</strong><p>Client AI delivery, solution design and project leadership.</p></div>
+      <div><span>APR — NOV 2023</span><h3>Software Engineer</h3><strong>Al Amthal Group</strong><p>Web, mobile and API development for client products.</p></div>
+      <div><span>JUL 2022 — JAN 2023</span><h3>IT Intern</h3><strong>Information &amp; eGovernment Authority</strong><p>Application development, testing and troubleshooting.</p></div>
+    </div>
+  </section>
 
   <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button type="button" class="dialog-close" aria-label="Close project details"><svg aria-hidden="true" focusable="false" class="icon"><use href="#icon-close" /></svg></button><div class="dialog-cover" aria-hidden="true"><span id="dialog-type"></span><strong id="dialog-monogram"></strong><span id="dialog-year"></span></div><div class="dialog-copy"><p class="section-label" id="dialog-category"></p><h2 id="dialog-title"></h2><p class="dialog-org" id="dialog-org"></p><p id="dialog-contribution"></p><h3>Tools &amp; focus</h3><div class="tag-list" id="dialog-stack"></div><div class="dialog-links" id="dialog-links"></div></div></div></dialog>
 
