@@ -28,3 +28,18 @@
 @media(max-width:420px){.main-nav{gap:10px}.main-nav a{font-size:9px}.brand-mark{width:34px;height:34px}.icon-link{width:31px;height:31px}.header-cv{width:31px;height:31px}.hero-social a{font-size:11px}}
 @media(max-width:760px){.panel-bottom{flex-wrap:wrap;justify-content:flex-start;gap:8px 16px}.panel-bottom span{white-space:nowrap}.panel-bottom span:last-child{display:block}}
 .work-visual:after{content:none}.work-visual strong{padding:18px;text-align:center;color:#f2c5a5;font-family:var(--display);font-size:clamp(1.25rem,2vw,1.85rem);line-height:1.12;letter-spacing:-.04em}
+
+/* The homepage has one project grid and a quieter, single-column introduction. */
+.hero{display:block;min-height:0;padding-top:116px;padding-bottom:112px}
+.hero-copy{max-width:800px}
+.hero h1{max-width:760px}
+.catalog-section{border-top:1px solid var(--line)}
+.catalog-heading{margin-bottom:34px}
+.project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.project-content{min-height:205px}
+.project-content .detail-trigger{border-top:1px solid var(--line)}
+.header-actions{min-width:0}
+.dialog-copy #dialog-contribution{margin-top:30px}
+@media(max-width:900px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.hero{padding-top:78px;padding-bottom:76px}}
+@media(max-width:540px){.project-grid{grid-template-columns:1fr}.project-content{min-height:0}}
