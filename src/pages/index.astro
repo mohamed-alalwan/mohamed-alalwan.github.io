@@ -71,14 +71,23 @@ const professionalCount = projects.filter((project) => project.category === 'Pro
     const filters = [...document.querySelectorAll('[data-filter]')];
     const cards = [...document.querySelectorAll('.project-card')];
     const search = document.querySelector('#project-search');
-    let activeFilter = 'Professional';
+    let activeFilter = new URL(location.href).searchParams.get('projects') === 'all' ? 'All' : 'Professional';
     const updateProjects = () => {
       const query = search.value.trim().toLowerCase(); let visible = 0;
       cards.forEach((card) => { const show = (activeFilter === 'All' || card.dataset.category === activeFilter) && card.dataset.search.includes(query); card.hidden = !show; if (show) visible++; });
       setText('#result-count', `Showing ${visible} project${visible === 1 ? '' : 's'}`);
       document.querySelector('#empty-state').hidden = visible !== 0;
     };
-    filters.forEach((button) => button.addEventListener('click', () => { activeFilter = button.dataset.filter; filters.forEach((item) => { const active = item === button; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); }); updateProjects(); }));
+    const updateFilterButtons = () => filters.forEach((item) => { const active = item.dataset.filter === activeFilter; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); });
+    updateFilterButtons(); updateProjects();
+    filters.forEach((button) => button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter;
+      const url = new URL(location.href);
+      if (activeFilter === 'All') url.searchParams.set('projects', 'all');
+      else url.searchParams.delete('projects');
+      history.replaceState(null, '', url);
+      updateFilterButtons(); updateProjects();
+    }));
     search.addEventListener('input', updateProjects);
   </script>
 </Base>
